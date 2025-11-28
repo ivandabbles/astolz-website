@@ -5,7 +5,7 @@
   <title>My One-Page Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- GOOGLE FONT (Inter) -->
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -23,14 +23,14 @@
       color: #111;
     }
 
+    /* ===== BASE LAYOUT ===== */
     .page {
       min-height: 100vh;
-      padding: 20px 18px;
+      padding: 150px 18px 20px 18px; /* DESKTOP: 150px top spacer */
       display: flex;
       flex-direction: column;
     }
 
-    /* Center column on larger screens, full-width on mobile */
     .content {
       width: 100%;
       max-width: 960px;
@@ -39,50 +39,46 @@
       flex-direction: column;
     }
 
-    /* Original (larger) font size – you can tweak later */
+    /* Original font sizing — you tweak from here */
     .tagline {
       font-size: clamp(1.2rem, 3vw, 1.8rem);
       line-height: 1.25;
       max-width: 32rem;
-      margin: 0 0 18px 0;
+      margin: 0 0 24px 0;
       text-align: left;
       font-weight: 500;
     }
 
-    .hero-image {
-      display: flex;
-      align-items: flex-start;
-    }
-
-    /* DESKTOP: image 70% of viewport height, aligned with text */
+    /* Desktop Image: 70% viewport height */
     .hero-image img {
       display: block;
       width: 100%;
-      height: 70vh;       /* <-- 70% of viewport height */
-      object-fit: cover;  /* crop is fine */
+      height: 70vh;
+      object-fit: cover;
     }
 
-    /* MOBILE + TABLET: image full-width and fills to bottom of screen under text */
+    /* ===== MOBILE + TABLET OVERRIDE ===== */
     @media (max-width: 1024px) {
       .page {
-        padding: 18px 16px;
+        padding: 24px 16px; /* reset padding so image can fill screen */
       }
 
       .hero-image img {
         width: 100%;
-        height: calc(100vh - 110px);  /* approx: viewport minus text & padding */
-        max-height: none;
+        height: calc(100vh - 120px);  /* fill the remaining screen under text */
         object-fit: cover;
+        max-height: none;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <div class="content">
 
       <p class="tagline">
-        Your name or line of text goes here.
+        STOLZYour name or line of text goes here.
       </p>
 
       <div class="hero-image">
