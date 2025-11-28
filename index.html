@@ -30,17 +30,18 @@
       flex-direction: column;
     }
 
+    /* Center column on larger screens, full-width on mobile */
     .content {
       width: 100%;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
     }
 
-    /* FONT SIZE SHRUNK ~20% */
+    /* Original (larger) font size – you can tweak later */
     .tagline {
-      font-size: clamp(0.9rem, 2.1vw, 1.45rem);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
       line-height: 1.25;
       max-width: 32rem;
       margin: 0 0 18px 0;
@@ -53,25 +54,25 @@
       align-items: flex-start;
     }
 
+    /* DESKTOP: image 70% of viewport height, aligned with text */
     .hero-image img {
       display: block;
       width: 100%;
-      height: auto;
-      max-height: 80vh;
-      object-fit: cover;
+      height: 70vh;       /* <-- 70% of viewport height */
+      object-fit: cover;  /* crop is fine */
     }
 
-    /* FULL SCREEN IMAGE ON MOBILE/TABLET */
+    /* MOBILE + TABLET: image full-width and fills to bottom of screen under text */
     @media (max-width: 1024px) {
-      .hero-image img {
-        width: 100%;
-        height: calc(100vh - 90px);
-        object-fit: cover;
-        max-height: none;
-      }
-
       .page {
         padding: 18px 16px;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: calc(100vh - 110px);  /* approx: viewport minus text & padding */
+        max-height: none;
+        object-fit: cover;
       }
     }
   </style>
@@ -85,7 +86,7 @@
       </p>
 
       <div class="hero-image">
-        <img src="stolz.webp" alt="Architectural rendering">
+        <img src="stolz.webp" alt="Large image">
       </div>
 
     </div>
