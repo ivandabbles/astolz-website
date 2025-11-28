@@ -4,12 +4,6 @@
   <meta charset="utf-8" />
   <title>My One-Page Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- GOOGLE FONT (Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
   <style>
     * {
       box-sizing: border-box;
@@ -18,18 +12,21 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: #111;
+      background: #fff;
     }
 
+    /* Page wrapper */
     .page {
       min-height: 100vh;
       padding: 20px 18px;
       display: flex;
       flex-direction: column;
+      align-items: stretch;   /* left-aligned content */
     }
 
+    /* Center content and limit width on larger screens */
     .content {
       width: 100%;
       max-width: 900px;
@@ -38,16 +35,16 @@
       flex-direction: column;
     }
 
-    /* FONT SIZE SHRUNK ~20% */
+    /* Your one line of text */
     .tagline {
-      font-size: clamp(0.9rem, 2.1vw, 1.45rem);
-      line-height: 1.25;
-      max-width: 32rem;
-      margin: 0 0 18px 0;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      line-height: 1.3;
+      max-width: 32rem;   /* keeps line length reasonable */
+      margin: 0 0 16px 0;
       text-align: left;
-      font-weight: 500;
     }
 
+    /* Image wrapper */
     .hero-image {
       display: flex;
       align-items: flex-start;
@@ -57,21 +54,16 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 80vh;
+      max-height: 80vh;     /* image never taller than 80% of viewport */
       object-fit: cover;
     }
 
-    /* FULL SCREEN IMAGE ON MOBILE/TABLET */
-    @media (max-width: 1024px) {
-      .hero-image img {
-        width: 100%;
-        height: calc(100vh - 90px);
-        object-fit: cover;
-        max-height: none;
-      }
-
+    @media (min-width: 768px) {
       .page {
-        padding: 18px 16px;
+        padding: 40px 48px;
+      }
+      .tagline {
+        margin-bottom: 24px;
       }
     }
   </style>
@@ -79,15 +71,13 @@
 <body>
   <main class="page">
     <div class="content">
-
       <p class="tagline">
-        Your name or line of text goes here.
+        Your one line of text goes here.
       </p>
 
       <div class="hero-image">
         <img src="stolz.webp" alt="Large image">
       </div>
-
     </div>
   </main>
 </body>
