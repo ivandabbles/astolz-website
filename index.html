@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>My One-Page Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * { box-sizing: border-box; }
-    body, html {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #111;
+      background: #fff;
     }
-    .hero {
+
+    /* Whole page container */
+    .page {
       min-height: 100vh;
+      padding: 20px 18px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
-    .hero img {
-      max-width: 90vw;
-      height: auto;
+
+    /* Your one line of text */
+    .tagline {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      line-height: 1.3;
+      max-width: 32rem;  /* Limits width on large screens */
+      margin: 0 0 16px 0;
+      text-align: left;
+    }
+
+    /* Image wrapper grows to fill remaining space */
+    .hero-image {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .hero-image img {
       display: block;
-      margin-bottom: 1.5rem;
+      width: 100%;
+      height: auto;
+      max-height: 80vh;   /* Important: image never taller than 80% of screen */
+      object-fit: cover;
     }
-    .hero-text {
-      font-size: 1.5rem;
+
+    @media (min-width: 768px) {
+      .page {
+        padding: 32px 40px;
+      }
+      .tagline {
+        margin-bottom: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <!-- Replace "image.jpg" with your actual image file name -->
-    <img src="stolz.webp" alt="Architectural rendering" />
-    <div class="hero-text">
-      Andrew Stolz
+  <main class="page">
+    <p class="tagline">
+      Your one line of text goes here.
+    </p>
+
+    <div class="hero-image">
+      <img src="stolz.webp" alt="Large image">
     </div>
-  </div>
+  </main>
 </body>
 </html>
