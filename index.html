@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>My One-Page Site</title>
+  <style>
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero img {
+      max-width: 90vw;
+      height: auto;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .hero-text {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <!-- Replace "image.jpg" with your actual image file name -->
+    <img src="image.jpg" alt="Big image description" />
+    <div class="hero-text">
+      This is my one line of text.
+    </div>
+  </div>
+</body>
+</html>
