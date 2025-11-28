@@ -5,7 +5,7 @@
   <title>My One-Page Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- GOOGLE FONT -->
+  <!-- GOOGLE FONT (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -23,62 +23,65 @@
       color: #111;
     }
 
-    /* ===== BASE LAYOUT ===== */
     .page {
       min-height: 100vh;
-      padding: 150px 18px 20px 18px; /* DESKTOP: 150px top spacer */
+      padding: 20px 18px;
       display: flex;
       flex-direction: column;
     }
 
     .content {
       width: 100%;
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
     }
 
-    /* Original font sizing — you tweak from here */
+    /* FONT SIZE SHRUNK ~20% */
     .tagline {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-size: clamp(0.9rem, 2.1vw, 1.45rem);
       line-height: 1.25;
       max-width: 32rem;
-      margin: 0 0 24px 0;
+      margin: 0 0 18px 0;
       text-align: left;
       font-weight: 500;
     }
 
-    /* Desktop Image: 70% viewport height */
+    .hero-image {
+      display: flex;
+      align-items: flex-start;
+    }
+
     .hero-image img {
       display: block;
       width: 100%;
-      height: 70vh;
+      height: auto;
+      max-height: 80vh;
       object-fit: cover;
     }
 
-    /* ===== MOBILE + TABLET OVERRIDE ===== */
+    /* FULL SCREEN IMAGE ON MOBILE/TABLET */
     @media (max-width: 1024px) {
-      .page {
-        padding: 24px 16px; /* reset padding so image can fill screen */
-      }
-
       .hero-image img {
         width: 100%;
-        height: calc(100vh - 120px);  /* fill the remaining screen under text */
+        height: calc(100vh - 90px);
         object-fit: cover;
         max-height: none;
+      }
+
+      .page {
+        padding: 18px 16px;
       }
     }
   </style>
 </head>
-
 <body>
   <main class="page">
     <div class="content">
 
       <p class="tagline">
-        STOLZYour name or line of text goes here.
+        Your name or line of text goes here.
       </p>
 
       <div class="hero-image">
