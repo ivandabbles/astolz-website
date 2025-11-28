@@ -43,8 +43,7 @@
     /* Wrapper for the image */
     .hero-image {
       flex: 1;
-      display: flex;
-      align-items: flex-start;
+      width: 100%;
     }
 
     /* DESKTOP — keep original behavior */
@@ -78,7 +77,7 @@
       max-width: none;
      margin: 0;
       }
-      
+
       .hero-image img {
         width: 100%;
         height: calc(100vh - 90px); /* fill viewport under text */
@@ -90,15 +89,15 @@
 </head>
 <body>
   <main class="page">
-    <div class="content">
+  <div class="content">
     <p class="tagline">
       Andrew Stolz
     </p>
+  </div>
 
-    <div class="hero-image">
-      <img src="stolz.webp" alt="Architectural rendering">
-      </div>
-    </div>
-  </main>
+  <div class="hero-image">
+    <img src="stolz.webp" alt="Architectural rendering">
+  </div>
+</main>
 </body>
 </html>
