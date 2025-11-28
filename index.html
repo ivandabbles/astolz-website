@@ -17,35 +17,27 @@
       background: #fff;
     }
 
-    /* Page wrapper */
+    /* Whole page wrapper */
     .page {
       min-height: 100vh;
       padding: 20px 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;   /* left-aligned content */
-    }
-
-    /* Center content and limit width on larger screens */
-    .content {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
     }
 
     /* Your one line of text */
     .tagline {
-      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-size: clamp(1.2rem, 3vw, 1.8rem); /* scales between mobile and desktop */
       line-height: 1.3;
-      max-width: 32rem;   /* keeps line length reasonable */
+      max-width: 32rem; /* so it doesn’t run super wide on desktop */
       margin: 0 0 16px 0;
       text-align: left;
     }
 
-    /* Image wrapper */
+    /* Wrapper for the image */
     .hero-image {
+      /* Let the image area grow to fill space */
+      flex: 1;
       display: flex;
       align-items: flex-start;
     }
@@ -54,13 +46,14 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 80vh;     /* image never taller than 80% of viewport */
-      object-fit: cover;
+      max-height: 80vh;   /* <= key bit: no taller than 80% of viewport */
+      object-fit: cover;  /* keeps it nicely cropped if needed */
     }
 
+    /* Slightly more generous padding on larger screens */
     @media (min-width: 768px) {
       .page {
-        padding: 40px 48px;
+        padding: 32px 40px;
       }
       .tagline {
         margin-bottom: 24px;
@@ -70,14 +63,13 @@
 </head>
 <body>
   <main class="page">
-    <div class="content">
-      <p class="tagline">
-        Your one line of text goes here.
-      </p>
+    <p class="tagline">
+      This is my one line of text, left aligned, above the image.
+    </p>
 
-      <div class="hero-image">
-        <img src="stolz.webp" alt="Large image">
-      </div>
+    <div class="hero-image">
+      <!-- Make sure this filename matches your actual file exactly -->
+      <img src="image.webp" alt="Description of the image">
     </div>
   </main>
 </body>
