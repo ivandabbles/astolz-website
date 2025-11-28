@@ -20,11 +20,12 @@
     /* Whole page wrapper */
     .page {
       min-height: 100vh;
-      padding: 80px 18px 20px 18px; /* desktop: add 150px space above */
+      padding: 80px 18px 20px 18px; /* desktop: space above name + image */
       display: flex;
       flex-direction: column;
     }
-   /* Cnetered content column for text + image on desktop*/
+
+    /* Centered content column for the name on desktop */
     .content {
       width: 85%;            /* 100% - ~15% reduction */
       max-width: 960px;      /* prevents it from going ridiculously wide */
@@ -42,45 +43,47 @@
 
     /* Wrapper for the image */
     .hero-image {
-      flex: 1;
-      width: 100%;
+      width: 85%;
+      max-width: 960px;
+      margin: 0 auto;        /* align with text column */
     }
 
-    /* DESKTOP — keep original behavior */
+    /* DESKTOP — original behavior: responsive, capped in height */
     .hero-image img {
       display: block;
       width: 100%;
       height: auto;
-      max-height: 80vh;
+      max-height: 80vh;      /* no taller than 80% of viewport */
       object-fit: cover;
     }
 
     /* Slightly more generous padding on larger screens */
     @media (min-width: 768px) {
       .page {
-        padding: 150px 40px 20px 40px; /* keep 150px top */
+        padding: 80px 40px 20px 40px; /* same top, more side padding */
       }
       .tagline {
         margin-bottom: 24px;
       }
     }
 
-    /* MOBILE + TABLET — fill viewport */
+    /* MOBILE + TABLET — full-width, fill viewport under text */
     @media (max-width: 1024px) {
       .page {
         padding: 24px 16px; /* reset padding so image can fill screen height */
       }
 
-  /* Remove desktop width constraints on mobile/tablet */
-    .content {
-      width: 100%;
-      max-width: none;
-     margin: 0;
+      /* Remove desktop width constraints on mobile/tablet */
+      .content,
+      .hero-image {
+        width: 100%;
+        max-width: none;
+        margin: 0;
       }
 
       .hero-image img {
         width: 100%;
-        height: calc(100vh - 90px); /* fill viewport under text */
+        height: calc(100vh - 90px); /* fill viewport under text; tweak 90px if needed */
         object-fit: cover;
         max-height: none;
       }
@@ -89,15 +92,15 @@
 </head>
 <body>
   <main class="page">
-  <div class="content">
-    <p class="tagline">
-      Andrew Stolz
-    </p>
-  </div>
+    <div class="content">
+      <p class="tagline">
+        Andrew Stolz
+      </p>
+    </div>
 
-  <div class="hero-image">
-    <img src="stolz.webp" alt="Architectural rendering">
-  </div>
-</main>
+    <div class="hero-image">
+      <img src="stolz.webp" alt="Architectural rendering">
+    </div>
+  </main>
 </body>
 </html>
