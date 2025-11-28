@@ -1,106 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>My One-Page Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #111;
-      background: #fff;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    /* Whole page wrapper */
-    .page {
-      min-height: 100vh;
-      padding: 80px 18px 20px 18px; /* desktop: space above name + image */
-      display: flex;
-      flex-direction: column;
-    }
+        .container {
+            width: 100%;
+            max-width: 70%;
+        }
 
-    /* Centered content column for the name on desktop */
-    .content {
-      width: 85%;            /* 100% - ~15% reduction */
-      max-width: 960px;      /* prevents it from going ridiculously wide */
-      margin: 0 auto;        /* centers the column */
-    }
+        .text {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
 
-    /* Your one line of text */
-    .tagline {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      line-height: 1.3;
-      max-width: 32rem;
-      margin: 0 0 16px 0;
-      text-align: left;
-    }
+        .image-wrapper {
+            width: 100%;
+        }
 
-    /* Wrapper for the image */
-    .hero-image {
-      width: 85%;
-      max-width: 960px;
-      margin: 0 auto;        /* align with text column */
-    }
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
 
-    /* DESKTOP — original behavior: responsive, capped in height */
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 80vh;      /* no taller than 80% of viewport */
-      object-fit: cover;
-    }
+        /* Tablet and Mobile */
+        @media (max-width: 1024px) {
+            body {
+                padding: 0;
+            }
 
-    /* Slightly more generous padding on larger screens */
-    @media (min-width: 768px) {
-      .page {
-        padding: 80px 40px 20px 40px; /* same top, more side padding */
-      }
-      .tagline {
-        margin-bottom: 24px;
-      }
-    }
+            .container {
+                max-width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
 
-    /* MOBILE + TABLET — full-width, fill viewport under text */
-    @media (max-width: 1024px) {
-      .page {
-        padding: 24px 16px; /* reset padding so image can fill screen height */
-      }
+            .text {
+                padding: 20px;
+                margin-bottom: 0;
+            }
 
-      /* Remove desktop width constraints on mobile/tablet */
-      .content,
-      .hero-image {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-      }
+            .image-wrapper {
+                flex: 1;
+            }
 
-      .hero-image img {
-        width: 100%;
-        height: calc(100vh - 90px); /* fill viewport under text; tweak 90px if needed */
-        object-fit: cover;
-        max-height: none;
-      }
-    }
-  </style>
+            .image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main class="page">
-    <div class="content">
-      <p class="tagline">
-        Andrew Stolz
-      </p>
+    <div class="container">
+        <div class="text">
+            Your text goes here
+        </div>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200" alt="Placeholder image">
+        </div>
     </div>
-
-    <div class="hero-image">
-      <img src="stolz.webp" alt="Architectural rendering">
-    </div>
-  </main>
 </body>
 </html>
