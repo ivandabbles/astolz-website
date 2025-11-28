@@ -29,10 +29,21 @@
         }
 
         .text {
-            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
             font-size: 18px;
             color: #333;
+        }
+
+        .text a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .text a:hover {
+            text-decoration: underline;
         }
 
         .image-wrapper {
@@ -86,10 +97,11 @@
 <body>
     <div class="container">
         <div class="text">
-            ANDREW STOLZ
+            <span>ANDREW STOLZ</span>
+            <a href="mailto:andrew@astolz.com">andrew@astolz.com</a>
         </div>
         <div class="image-wrapper">
-            <img src="stolz.webp" alt="Placeholder image">
+            <img src="stolz.webp" alt="Andrew Stolz">
         </div>
     </div>
 </body>
