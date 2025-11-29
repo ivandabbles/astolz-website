@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Stolz</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.">
+    <title>Andrew Stolz - Architect</title>
+    <meta name="description" content="Andrew Stolz is an architect based in Sacramento and San Francisco.">
+    <meta name="keywords" content="Andrew Stolz, architect, Sacramento, San Francisco">
+    <meta name="author" content="Andrew Stolz">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Andrew Stolz - Architect">
+    <meta property="og:description" content="Andrew Stolz is an architect based in Sacramento and San Francisco.">
+    <meta property="og:image" content="https://www.astolz.com/stolz.webp">
+    <meta property="og:url" content="https://www.astolz.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Andrew Stolz - Architect">
+    <meta name="twitter:description" content="Andrew Stolz is an architect based in Sacramento and San Francisco.">
+    <meta name="twitter:image" content="https://www.astolz.com/stolz.webp">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="canonical" href="https://www.astolz.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
@@ -43,6 +61,16 @@
             margin-bottom: 20px;
             font-size: 18px;
             color: #333;
+        }
+
+        .text h1 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .text h1 span {
+            font-weight: 400;
         }
 
         .text a {
@@ -105,14 +133,16 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="text">
-            <span>ANDREW STOLZ</span>
-            <a href="mailto:andrew@astolz.com">andrew@astolz.com</a>
+    <main>
+        <div class="container">
+            <header class="text">
+                <h1><span>ANDREW STOLZ</span></h1>
+                <a href="mailto:andrew@astolz.com" aria-label="Email Andrew Stolz">andrew@astolz.com</a>
+            </header>
+            <div class="image-wrapper">
+                <img src="stolz.webp" alt="Andrew Stolz - Architect based in Sacramento and San Francisco" width="1200" height="800" loading="eager">
+            </div>
         </div>
-        <div class="image-wrapper">
-            <img src="stolz.webp" alt="Andrew Stolz">
-        </div>
-    </div>
+    </main>
 </body>
 </html>
